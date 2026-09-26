@@ -2,5 +2,5 @@ public interface Student {
     String getName();
     void setName(String name);
     boolean isClone();
-    void setIsClone(boolean);
+    void setIsClone(boolean value);
 }
