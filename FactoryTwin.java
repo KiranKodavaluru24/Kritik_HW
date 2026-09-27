@@ -1,11 +1,14 @@
 public class FactoryTwin {
     public Student createStudent(String studentType) {
+        if (studentType == null) {
+            throw new IllegalArgumentException("Student type cannot be null");
+        }
         if (studentType.equalsIgnoreCase("super")) {
             return new SuperStudent("New SuperStudent");
         } else if (studentType.equalsIgnoreCase("ta")) {
             return new TeachingAssistant("New TeachingAssistant", "Unassigned");
         } else {
-            return null;
+            throw new IllegalArgumentException("Unrecognized student type: " + studentType);
         }
     }
     public Student createStudentClone(Student studentToClone) {
@@ -19,7 +22,7 @@ public class FactoryTwin {
             clone.setIsClone(true);
             return clone;
          } else {
-            return null;
+            throw new IllegalArgumentException("Cannot clone: unsupported or null Student");
          }
     }
 }
