@@ -19,5 +19,11 @@ public class StudentDemo {
 
         System.out.println("Original: " + ta.getName());
         System.out.println("Clone: " + taClone.getName());
+
+        try {
+            factory.createStudent("professor");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Caught error: " + e.getMessage());
+        }
     }
 }
