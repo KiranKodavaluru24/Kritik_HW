@@ -6,5 +6,11 @@ public class StudentDemo {
 
         Student ta = factory.createStudent("ta");
         System.out.println(ta.getName());
+
+        Student superClone = factory.createStudentClone(superStudent);
+        superClone.setName("Changed Name");
+
+        System.out.println("Original: " + superStudent.getName());
+        System.out.println("Clone: " + superClone.getName());
     }
 }
