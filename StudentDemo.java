@@ -12,5 +12,12 @@ public class StudentDemo {
 
         System.out.println("Original: " + superStudent.getName());
         System.out.println("Clone: " + superClone.getName());
+
+        Student taClone = factory.createStudentClone(ta);
+        taClone.setName("Changed TA Name");
+
+
+        System.out.println("Original: " + ta.getName());
+        System.out.println("Clone: " + taClone.getName());
     }
 }
